@@ -1,0 +1,280 @@
+.employee-container {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 40px 32px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.09);
+}
+.employee-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+  gap: 16px;
+  position: relative;
+}
+.employee-back-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #3182ce;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: color 0.2s, background 0.2s;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.employee-back-btn:hover {
+  color: #225ea8;
+  background: #e6f0fa;
+}
+.employee-title {
+  flex: 1;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d3748;
+  letter-spacing: 1px;
+}
+.employee-add-btn {
+  background: #3182ce;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: auto;
+}
+.employee-add-btn:hover {
+  background: #225ea8;
+}
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  table-layout: fixed;
+}
+.employee-table th, .employee-table td {
+  padding: 10px 6px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  vertical-align: middle;
+}
+
+/* Cho phép một số cột xuống dòng khi cần */
+.employee-table th:nth-child(1), .employee-table td:nth-child(1) { /* Tên đăng nhập */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.employee-table th:nth-child(2), .employee-table td:nth-child(2) { /* Email */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.employee-table th:nth-child(3), .employee-table td:nth-child(3) { /* Lương cơ bản */
+  white-space: nowrap;
+}
+.employee-table th:nth-child(4), .employee-table td:nth-child(4) { /* Lương/giờ */
+  white-space: nowrap;
+}
+.employee-table th:nth-child(5), .employee-table td:nth-child(5) { /* Hoa hồng */
+  white-space: nowrap;
+}
+.employee-table th:nth-child(6), .employee-table td:nth-child(6) { /* Ngày tạo */
+  white-space: normal;
+  word-break: break-word;
+  font-size: 0.8rem;
+}
+.employee-table th:nth-child(7), .employee-table td:nth-child(7) { /* Hành động */
+  white-space: nowrap;
+}
+
+/* Độ rộng cột cụ thể */
+.employee-table th:nth-child(1), .employee-table td:nth-child(1) { /* Tên đăng nhập */
+  width: 15%;
+}
+.employee-table th:nth-child(2), .employee-table td:nth-child(2) { /* Email */
+  width: 22%;
+}
+.employee-table th:nth-child(3), .employee-table td:nth-child(3) { /* Lương cơ bản */
+  width: 14%;
+}
+.employee-table th:nth-child(4), .employee-table td:nth-child(4) { /* Lương/giờ */
+  width: 12%;
+}
+.employee-table th:nth-child(5), .employee-table td:nth-child(5) { /* Hoa hồng */
+  width: 10%;
+}
+.employee-table th:nth-child(6), .employee-table td:nth-child(6) { /* Ngày tạo */
+  width: 17%;
+}
+.employee-table th:nth-child(7), .employee-table td:nth-child(7) { /* Hành động */
+  width: 10%;
+}
+.employee-table th {
+  background: #f7fafc;
+  color: #4a5568;
+  font-weight: 600;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.employee-table tr:hover {
+  background: #f1f5f9;
+}
+.employee-actions {
+  display: flex;
+  gap: 3px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+.employee-actions button {
+  padding: 3px 6px;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  min-width: 40px;
+  text-align: center;
+}
+.employee-actions .edit-btn {
+  background: #ecc94b;
+  color: #2d3748;
+}
+.employee-actions .edit-btn:hover {
+  background: #d69e2e;
+}
+.employee-actions .delete-btn {
+  background: #e53e3e;
+  color: #fff;
+}
+.employee-actions .delete-btn:hover {
+  background: #9b2c2c;
+}
+.employee-form-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.employee-form {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  padding: 32px 28px;
+  min-width: 340px;
+  max-width: 95vw;
+}
+.employee-form-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #2b6cb0;
+}
+.employee-form-group {
+  margin-bottom: 16px;
+}
+.employee-form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #4a5568;
+}
+.employee-form-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+.employee-form-input:focus {
+  border: 1.5px solid #3182ce;
+}
+.employee-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+.employee-form-save-btn {
+  background: #3182ce;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.employee-form-save-btn:hover {
+  background: #225ea8;
+}
+.employee-form-cancel-btn {
+  background: #e2e8f0;
+  color: #2d3748;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.employee-form-cancel-btn:hover {
+  background: #cbd5e1;
+}
+.error-message {
+  color: #e53e3e;
+  margin-top: 8px;
+  font-size: 0.98rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .employee-container {
+    padding: 20px 16px;
+    margin: 16px auto;
+  }
+  
+  .employee-title {
+    font-size: 1.8rem;
+  }
+  
+  .employee-table {
+    font-size: 0.8rem;
+  }
+  
+  .employee-table th, .employee-table td {
+    padding: 8px 4px;
+    font-size: 0.75rem;
+  }
+  
+  .employee-actions {
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .employee-actions button {
+    padding: 3px 6px;
+    font-size: 0.7rem;
+    min-width: 40px;
+  }
+} 
